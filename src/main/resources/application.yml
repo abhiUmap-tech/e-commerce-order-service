@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: order-service
+
+# MongoDB Atlas Connection
+  data:
+    mongodb:
+      uri: mongodb+srv://abhiumap31:RilGQicKUHIhUWuP@cluster0.2lirn.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+
+# Additional Spring Boot MongoDB properties (optional)
+      database: order-service
+
+
+# Hibernate and JPA properties (if applicable)
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MongoDialect
+
+# Logging Level
+logging:
+  level:
+    org:
+      springframework:
+        data:
+          mongodb:
+            core: DEBUG
