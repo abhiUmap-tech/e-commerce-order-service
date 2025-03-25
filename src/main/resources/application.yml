@@ -1,16 +1,8 @@
+
 spring:
   application:
-    name: order-service
-
-  # MongoDB Atlas Connection
-  data:
-    mongodb:
-      uri: mongodb+srv://abhiumap31:RilGQicKUHIhUWuP@cluster0.2lirn.mongodb.net/order-service?retryWrites=true&w=majority&appName=Cluster0
-
-server:
-  port: 8081
-
-# Logging Level
-logging:
-  level:
-    '[org.springframework.data.mongodb.core]': DEBUG
+    name:  order-service # Name of the application; matches configuration in the Config Server
+  config:
+    import: configserver:http://localhost:8888 # Import configurations from the Config Server
+  profiles:
+    active: default # Profile to fetch from the Config Server
